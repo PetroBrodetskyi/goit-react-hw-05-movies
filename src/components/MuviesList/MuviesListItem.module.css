@@ -1,4 +1,5 @@
 .postertitle {
+  width: 300px;
   color: blue;
   font-size: 18px;
   text-decoration: none;
@@ -6,4 +7,5 @@
 
 .postercard {
   display: flex;
+  width: 300px;
 }

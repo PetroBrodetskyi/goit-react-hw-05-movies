@@ -43,15 +43,14 @@ export default function MovieDetails() {
         <>
           <div className={css.muviecontainer}>
             <img className={css.imgcontainer} src={BASE_URL + poster_path} alt="poster" />
-            <div>
+            <div className={css.overcard}>
               <h1>{title}</h1>
               <p>User score: {(vote_average * 10).toFixed()}%</p>
               <h2>Overview</h2>
               <p>{overview ? overview : 'N/A'}</p>
               <h2>Genres</h2>
               <p>{genres.length > 0 ? genres.map(i => i.name) : 'N/A'}</p>
-              
-              </div>
+            </div>
           </div>
           <h3 className={css.infotitle}>Additional information</h3>
             <ul className={css.infoflex}>

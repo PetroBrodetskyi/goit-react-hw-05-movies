@@ -3,7 +3,7 @@
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  gap: 30px;
+  gap: 50px;
   width: 90%;
 }
 
@@ -27,4 +27,5 @@
   font-size: 18px;
   color: blue;
   text-decoration: none;
+  border: 1px solid #ccc;
 }

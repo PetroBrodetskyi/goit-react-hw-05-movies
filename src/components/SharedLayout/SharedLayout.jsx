@@ -1,18 +1,23 @@
 import { NavLink, Outlet } from 'react-router-dom'
 import { Suspense } from 'react';
+import Loader from '../Loader/Loader';
+import css from "./SharedLayout.module.css"
+
 
 export function SharedLayout() {
     return (
       <>
-              <NavLink to={'/'}>
+        <div className={css.flexmenu}>
+            <NavLink to={'/'}>
                 Home
               </NavLink>
               <NavLink to={'movies'}>
                 Movies
-              </NavLink>
+            </NavLink>
+          </div>
         <main>
           <section>
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<Loader />}>
                 <Outlet />
               </Suspense>
           </section>

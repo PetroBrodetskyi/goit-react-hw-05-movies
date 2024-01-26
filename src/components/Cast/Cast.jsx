@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import css from "./Cast.module.css";
 
 const movieAPI = new MovieAPI();
-const BASE_URL = 'https://image.tmdb.org/t/p/w400';
+const BASE_URL = 'https://image.tmdb.org/t/p/w300';
 
 export default function Cast() {
     const [cast, setCast] = useState([]);

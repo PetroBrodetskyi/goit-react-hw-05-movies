@@ -2,3 +2,10 @@
   display: grid;
   width: 500px;
 }
+
+.listflex {
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
