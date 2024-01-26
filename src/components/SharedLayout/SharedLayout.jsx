@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom'
 import { Suspense } from 'react';
 import Loader from '../Loader/Loader';
+import { AiFillHome, AiOutlineSearch } from "react-icons/ai";
 import css from "./SharedLayout.module.css"
 
 
@@ -8,11 +9,11 @@ export function SharedLayout() {
     return (
       <>
         <div className={css.flexmenu}>
-            <NavLink to={'/'}>
-                Home
+            <NavLink className={css.linkmenu} to={'/'}>
+                <AiFillHome />
               </NavLink>
-              <NavLink to={'movies'}>
-                Movies
+              <NavLink className={css.linkmenu} to={'movies'}>
+                <AiOutlineSearch />
             </NavLink>
           </div>
         <main>

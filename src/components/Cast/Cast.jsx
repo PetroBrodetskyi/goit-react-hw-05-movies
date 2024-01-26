@@ -28,8 +28,8 @@ export default function Cast() {
             {cast.length > 0 ? (
                 <div className={css.castList}>
                     {cast.map(({ id, character, original_name, profile_path }) => (
-                        <div key={id}>
-                            <div >
+                        <div className={css.castcard} key={id}>
+                            <div>
                                 <img className={css.imgthumb} src={BASE_URL + profile_path} alt="Foto" />
                             </div>
                             <h4>{character}</h4>

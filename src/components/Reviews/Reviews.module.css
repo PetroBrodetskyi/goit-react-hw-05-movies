@@ -1,5 +1,14 @@
 .reviewlist {
   display: flex;
-  width: 100px;
-  background-color: blueviolet;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  justify-content: center;
+}
+
+.reviewitem {
+  width: 300px;
+  padding: 10px;
+  max-height: 500px;
+  overflow-y: auto;
 }

@@ -1,11 +1,16 @@
 .postertitle {
-  width: 300px;
-  color: blue;
-  font-size: 18px;
-  text-decoration: none;
+  color: black;
+  font-size: 16px;
+
+  text-align: center;
 }
 
 .postercard {
   display: flex;
   width: 300px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.linkwithoutunderline {
+  text-decoration: none;
 }

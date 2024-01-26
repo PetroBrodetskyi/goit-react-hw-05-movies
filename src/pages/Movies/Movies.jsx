@@ -40,7 +40,7 @@ export default function Movies() {
     return (
       <>
         <form className={css.formflex} onSubmit={handleSubmit}>
-          <input type="text" name="movie" placeholder="Name movie" autoFocus value={inputValue} onChange={e => setInputValue(e.target.value)}/>
+          <input className={css.inputstyle} type="text" name="movie" placeholder="Name movie" autoFocus value={inputValue} onChange={e => setInputValue(e.target.value)}/>
           <Button text={'Search'} />
         </form>
             {movies.length > 0 && <MoviesList data={movies}/>}
@@ -49,5 +49,3 @@ export default function Movies() {
     );
 }
 
-// https://api.themoviedb.org/3/search/movie?q=batman&page=1
-// https://api.themoviedb.org/3/search/movie?query=batman&include_adult=false&page=1

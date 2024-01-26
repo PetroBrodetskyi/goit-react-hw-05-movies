@@ -37,12 +37,12 @@ export default function MovieDetails() {
   const { title, poster_path, overview, vote_average, genres } = movie || {};
 
   return (
-    <>
-      <Button text={'<- Go back'} handleClick={() => navigate(backLink)} />
+    <div className={css.muviecontainer} >
+      <Button text={'Go back'} handleClick={() => navigate(backLink)} />
       {movie && (
         <>
-          <div className={css.muviecontainer}>
-            <img className={css.imgcontainer} src={BASE_URL + poster_path} alt="poster" />
+          <div className={css.imgcontainer}>
+            <img src={BASE_URL + poster_path} alt="poster" />
             <div className={css.overcard}>
               <h1>{title}</h1>
               <p>User score: {(vote_average * 10).toFixed()}%</p>
@@ -52,25 +52,27 @@ export default function MovieDetails() {
               <p>{genres.length > 0 ? genres.map(i => i.name) : 'N/A'}</p>
             </div>
           </div>
-          <h3 className={css.infotitle}>Additional information</h3>
+          <div className={css.infotitle}>
+            <h3>Additional information</h3>
             <ul className={css.infoflex}>
-              <li>
+              <li className={css.infoli}>
               <Link className={css.infolink} to={'cast'}>
                   Cast
                 </Link>
               </li>
-              <li>
+              <li className={css.infoli}>
                 <Link className={css.infolink} to={'reviews'}>
                   Reviews
                 </Link>
               </li>
             </ul>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Outlet />
-          </Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Outlet />
+            </Suspense>
+          </div>
         </>
       )}
       {err && <h1>Oooops... Please reload page</h1>}
-    </>
+    </div>
   );
 }

@@ -10,13 +10,13 @@ export function MoviesListItem({ data: { id, poster_path, title } }) {
   
   return (
     <div className={css.postercard}>
-      <Link to={`/movies/${id}`} state={{ from: location }}>
-        <h2 className={css.postertitle}>{title}</h2>
+      <Link to={`/movies/${id}`} state={{ from: location }} className={css.linkwithoutunderline}>
           <img
             src={poster_path ? BASE_URL + poster_path : img}
             alt="poster"
-          />
+        />
+        <h2 className={css.postertitle}>{title}</h2>
       </Link>
-      </div>
+    </div>
   );
 }

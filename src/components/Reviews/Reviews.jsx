@@ -28,7 +28,7 @@ export default function Reviews() {
       {data.length > 0 ? (
         <ul className={css.reviewlist}>
           {data.map(({ id, author, content }) => (
-            <li key={id}>
+            <li className={css.reviewitem} key={id}>
               <h4>{author}</h4>
               <p>{content}</p>
             </li>
