@@ -1,11 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Button } from "components/Button/Button";
+import { useNavigate } from "react-router-dom";
 
-const NotFound = () => {
+export const NotFound = () => {
+    const navigate = useNavigate();
   return (
-    <>
-      <h2>Oops... nothing found...</h2>
-      <Link to="/">Back to home</Link>
-    </>
+      <main style={{ textAlign: 'center', padding: '100px' }}>
+          <Button text={'Go home'} handleClick={() => navigate('/')}/>
+      <p><b style={{ fontSize: 64 }}>404</b></p>
+      <p>Sorry, we couldn't find that page : </p>
+    </main>
   );
 };
-export default NotFound;

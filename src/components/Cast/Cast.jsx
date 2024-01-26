@@ -1,9 +1,46 @@
+import { MovieAPI } from "serviсes/moviesApi";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import css from "./Cast.module.css";
 
-const Cast = () => {
-  
-  }
+const movieAPI = new MovieAPI();
+const BASE_URL = 'https://image.tmdb.org/t/p/w400';
 
+export default function Cast() {
+    const [cast, setCast] = useState([]);
+    const [error, setError] = useState(null);
+    const { movieId } = useParams();
 
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const resp = await movieAPI.getMovieCredits(movieId);
+                setCast(resp.cast);
+            } catch (err) {
+                setError(err);
+            }
+        }
+        fetchData();
+    }, [movieId]);
 
-
-export default Cast;
+    return (
+        <>
+            {cast.length > 0 ? (
+                <div className={css.castList}>
+                    {cast.map(({ id, character, original_name, profile_path }) => (
+                        <div key={id}>
+                            <div >
+                                <img className={css.imgthumb} src={BASE_URL + profile_path} alt="Foto" />
+                            </div>
+                            <h4>{character}</h4>
+                            <p>{original_name}</p>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <p>N/A</p>
+            )}
+            {error && <h1>Oooops... Please reload page</h1>}
+        </>
+    );
+}

@@ -1,8 +1,32 @@
-const Home = () => {
-  
-  }
+import { MovieAPI } from "serviсes/moviesApi";
+import { MoviesList } from "components/MuviesList/MuviesList";
+import { useEffect, useState } from "react";
 
+const movieAPI = new MovieAPI();
 
+export default function Home() {
+    const [movies, setMovies] = useState([]);
+    const [err, setErr] = useState(null);
 
-
-export default Home;
+    useEffect(() => {
+    
+    async function fetchData () {
+            try {
+                const resp = await movieAPI.getTrending()
+                setMovies(resp.results)
+            } catch (err) {
+                setErr(err)
+            }
+        
+    }
+        fetchData()
+    }, [])
+    
+    return <>
+        {movies.length > 0 && <>
+            <h1 className="section-title">Trending today</h1>
+            <MoviesList data={ movies} />
+        </>}
+        {err && <h1>Oooops... Please reload page</h1>}
+    </>
+}

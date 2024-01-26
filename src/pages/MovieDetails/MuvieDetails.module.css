@@ -1,0 +1,30 @@
+.muviecontainer {
+  padding-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  gap: 30px;
+  width: 90%;
+}
+
+.imgcontainer {
+  width: 300px;
+}
+
+.infoflex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.infotitle {
+  text-align: center;
+}
+
+.infolink {
+  font-size: 18px;
+  color: blue;
+  text-decoration: none;
+}
