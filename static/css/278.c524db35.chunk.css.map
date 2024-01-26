@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/278.c524db35.chunk.css","mappings":"AAAA,mCACE,UAAW,CACX,cAAe,CACf,oBACF,CAEA,kCACE,YACF","sources":["components/MuviesList/MuviesListItem.module.css"],"sourcesContent":[".postertitle {\n  color: blue;\n  font-size: 18px;\n  text-decoration: none;\n}\n\n.postercard {\n  display: flex;\n}\n"],"names":[],"sourceRoot":""}
