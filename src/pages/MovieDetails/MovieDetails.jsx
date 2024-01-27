@@ -53,14 +53,14 @@ export default function MovieDetails() {
             </div>
           </div>
           <div className={css.infotitle}>
-            <h3>Additional information</h3>
+            <h3 className={css.addititle}>More information...</h3>
             <ul className={css.infoflex}>
-              <li className={css.infoli}>
+              <li>
               <Link className={css.infolink} to={'cast'}>
                   Cast
                 </Link>
               </li>
-              <li className={css.infoli}>
+              <li>
                 <Link className={css.infolink} to={'reviews'}>
                   Reviews
                 </Link>

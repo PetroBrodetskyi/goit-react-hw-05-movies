@@ -1,7 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import css from "./MuviesListItem.module.css"
 import img from 'img/img.png';
-console.log('img:', img);
 
 const BASE_URL = 'https://image.tmdb.org/t/p/w300';
 

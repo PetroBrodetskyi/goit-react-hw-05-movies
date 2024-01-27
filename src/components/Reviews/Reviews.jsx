@@ -35,7 +35,7 @@ export default function Reviews() {
           ))}
         </ul>
       ) : (
-        <p>No reviews available</p>
+        <p className={css.reviewavailable}>No reviews available</p>
       )}
       {err && <h1>Oooops... Please reload page</h1>}
     </>

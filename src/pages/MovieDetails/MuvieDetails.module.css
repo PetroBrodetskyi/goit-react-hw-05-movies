@@ -13,28 +13,32 @@
 
 .infoflex {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   list-style: none;
+  padding-bottom: 28px;
+  margin: 0;
 }
 
 .infotitle {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.5);
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
-.infoli {
-  padding: 5px;
+.addititle {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
 }
 
 .infolink {
   color: black;
   text-decoration: none;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  display: flex;
+  justify-content: center;
   padding: 5px;
+  width: 120px;
+  border-radius: 5px;
   background-color: rgba(0, 0, 255, 0.3);
+  cursor: pointer;
 }

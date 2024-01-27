@@ -1,6 +1,7 @@
 import { MovieAPI } from "serviсes/moviesApi";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import img from 'img/img.png';
 import css from "./Cast.module.css";
 
 const movieAPI = new MovieAPI();
@@ -30,7 +31,7 @@ export default function Cast() {
                     {cast.map(({ id, character, original_name, profile_path }) => (
                         <div className={css.castcard} key={id}>
                             <div>
-                                <img className={css.imgthumb} src={BASE_URL + profile_path} alt="Foto" />
+                                <img className={css.imgthumb} src={profile_path ? BASE_URL + profile_path : img} alt="Foto" />
                             </div>
                             <h4>{character}</h4>
                             <p>{original_name}</p>
@@ -38,7 +39,7 @@ export default function Cast() {
                     ))}
                 </div>
             ) : (
-                <p>N/A</p>
+                <p className={css.castna}>N/A</p>
             )}
             {error && <h1>Oooops... Please reload page</h1>}
         </>
